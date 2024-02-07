@@ -1,0 +1,151 @@
+﻿@page
+@model aspnetcoreapp.Pages.Ajuste.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Ajustes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Ajustes.Id" />
+            <div class="form-group">
+                <label asp-for="Ajustes.DomingoInicio" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.DomingoInicio" value = "@Model.Ajustes.DomingoInicio.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.DomingoInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.LunesInicio" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.LunesInicio" value = "@Model.Ajustes.LunesInicio.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.LunesInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.MartesInicio" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.MartesInicio" value = "@Model.Ajustes.MartesInicio.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.MartesInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.MiercolesInicio" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.MiercolesInicio" value = "@Model.Ajustes.MiercolesInicio.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.MiercolesInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.JuevesInicio" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.JuevesInicio" value = "@Model.Ajustes.JuevesInicio.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.JuevesInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.ViernesInicio" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.ViernesInicio" value = "@Model.Ajustes.ViernesInicio.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.ViernesInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.SabadoInicio" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.SabadoInicio" value = "@Model.Ajustes.SabadoInicio.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.SabadoInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.DomingoFinal" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.DomingoFinal" value = "@Model.Ajustes.DomingoFinal.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.DomingoFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.LunesFinal" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.LunesFinal" value = "@Model.Ajustes.LunesFinal.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.LunesFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.MartesFinal" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.MartesFinal" value = "@Model.Ajustes.MartesFinal.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.MartesFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.MiercolesFinal" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.MiercolesFinal" value = "@Model.Ajustes.MiercolesFinal.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.MiercolesFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.JuevesFinal" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.JuevesFinal" value = "@Model.Ajustes.JuevesFinal.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.JuevesFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.ViernesFinal" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.ViernesFinal" value = "@Model.Ajustes.ViernesFinal.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />
+                <span asp-validation-for="Ajustes.ViernesFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.SabadoFinal" class="control-label"></label>
+                <input type="time" asp-for="Ajustes.SabadoFinal" value = "@Model.Ajustes.SabadoFinal.ToString("HH:mm")" asp-format="{0:t}" class="form-control" />@Html.DisplayNameFor(model => model.Ajustes.SabadoFinal)
+                <span asp-validation-for="Ajustes.SabadoFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.ISL" class="control-label"></label>
+                <select asp-for="Ajustes.ISL"
+                        asp-items="Html.GetEnumSelectList<Models.DiasSemanaClase.DiasEspaniol>()" class="form-control">
+                </select>
+                <span asp-validation-for="Ajustes.ISL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ajustes.FSL" class="control-label"></label>
+                <select asp-for="Ajustes.FSL"
+                        asp-items="Html.GetEnumSelectList<Models.DiasSemanaClase.DiasEspaniol>()" class="form-control">
+                </select>
+                <span asp-validation-for="Ajustes.FSL" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ajustes.Domingo" /> @Html.DisplayNameFor(model => model.Ajustes.Domingo)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ajustes.Lunes" /> @Html.DisplayNameFor(model => model.Ajustes.Lunes)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ajustes.Martes" /> @Html.DisplayNameFor(model => model.Ajustes.Martes)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ajustes.Miercoles" /> @Html.DisplayNameFor(model => model.Ajustes.Miercoles)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ajustes.Jueves" /> @Html.DisplayNameFor(model => model.Ajustes.Jueves)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ajustes.Viernes" /> @Html.DisplayNameFor(model => model.Ajustes.Viernes)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ajustes.Sabado" /> @Html.DisplayNameFor(model => model.Ajustes.Sabado)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

@@ -1,0 +1,212 @@
+﻿@page
+@model aspnetcoreapp.Pages.Ajuste.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ajustes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <table>
+            <tbody>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.DomingoInicio" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.DomingoInicio" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.DomingoInicio" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.LunesInicio" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.LunesInicio" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.LunesInicio" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.MartesInicio" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.MartesInicio" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.MartesInicio" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.MiercolesInicio" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.MiercolesInicio" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.MiercolesInicio" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.JuevesInicio" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.JuevesInicio" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.JuevesInicio" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.ViernesInicio" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.ViernesInicio" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.ViernesInicio" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.SabadoInicio" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.SabadoInicio" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.SabadoInicio" class="text-danger"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.DomingoFinal" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.DomingoFinal" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.DomingoFinal" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.LunesFinal" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.LunesFinal" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.LunesFinal" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.MartesFinal" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.MartesFinal" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.MartesFinal" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.MiercolesFinal" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.MiercolesFinal" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.MiercolesFinal" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.JuevesFinal" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.JuevesFinal" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.JuevesFinal" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.ViernesFinal" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.ViernesFinal" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.ViernesFinal" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="Ajustes.SabadoFinal" class="control-label"></label>
+                            <input type="time" asp-for="Ajustes.SabadoFinal" asp-format="{0:t}" class="form-control" />
+                            <span asp-validation-for="Ajustes.SabadoFinal" class="text-danger"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="form-group">
+                            <label asp-for="Ajustes.ISL" class="control-label"></label>
+                            <select asp-for="Ajustes.ISL"
+                                    asp-items="Html.GetEnumSelectList<Models.DiasSemanaClase.DiasEspaniol>()" class="form-control">
+                            </select>
+                            <span asp-validation-for="Ajustes.ISL" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td colspan="3">
+                        <div class="form-group">
+                            <label asp-for="Ajustes.FSL" class="control-label"></label>
+                            <select asp-for="Ajustes.FSL"
+                                    asp-items="Html.GetEnumSelectList<Models.DiasSemanaClase.DiasEspaniol>()" class="form-control">
+                            </select>
+                            <span asp-validation-for="Ajustes.FSL" class="text-danger"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Ajustes.Domingo" /> @Html.DisplayNameFor(model => model.Ajustes.Domingo)
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Ajustes.Lunes" /> @Html.DisplayNameFor(model => model.Ajustes.Lunes)
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Ajustes.Martes" /> @Html.DisplayNameFor(model => model.Ajustes.Martes)
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Ajustes.Miercoles" /> @Html.DisplayNameFor(model => model.Ajustes.Miercoles)
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Ajustes.Jueves" /> @Html.DisplayNameFor(model => model.Ajustes.Jueves)
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Ajustes.Viernes" /> @Html.DisplayNameFor(model => model.Ajustes.Viernes)
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Ajustes.Sabado" /> @Html.DisplayNameFor(model => model.Ajustes.Sabado)
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </td>
+                </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

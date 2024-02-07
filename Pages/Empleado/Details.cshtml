@@ -1,0 +1,172 @@
+﻿@page
+@model aspnetcoreapp.Pages.Empleado.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section Styles {
+<link href="@Url.Content("~/css/Empleado/Create.css")" rel="stylesheet" type="text/css" />
+}
+
+<h3>Detalles de empleado</h3>
+    <a id = "Editar_detalles" class="btn" asp-page="./Edit" asp-route-id="@Model.Empleados?.Contrasenia">Editar</a>
+<hr />
+<div class="tabla">
+    <div class="row">
+        <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Nombre" class="control-label"></label>
+                                <input asp-for="Empleados.Nombre" class="form-control" readonly />
+                            </div>
+                        </td>
+                        <td>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Contrasenia" class="control-label"></label>
+                                <input asp-for="Empleados.Contrasenia" class="form-control" readonly/>
+                            </div>
+                        </td>
+                        <td rowspan="5">
+                            <img src="/imagenes/Mesero_detalles.png" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.NumeroEmpleado" class="control-label"></label>
+                                <input type="number" asp-for="Empleados.NumeroEmpleado" class="form-control" readonly/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Puesto" class="control-label"></label>
+                                <input asp-for="Empleados.Puesto" class="form-control" readonly/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.FechaNacimiento" class="control-label"></label>
+                                <input asp-for="Empleados.FechaNacimiento" class="form-control" readonly/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.FechaIngreso" class="control-label"></label>
+                                <input asp-for="Empleados.FechaIngreso" class="form-control" readonly/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Telefono" class="control-label"></label>
+                                <input asp-for="Empleados.Telefono" class="form-control" readonly/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Direccion" class="control-label"></label>
+                                <input asp-for="Empleados.Direccion" class="form-control" readonly/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.HorasEstipuladas" class="control-label"></label>
+                                <input asp-for="Empleados.HorasEstipuladas" class="form-control" readonly/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.PagoPorHora" class="control-label"></label>
+                                <input asp-for="Empleados.PagoPorHora" class="form-control" readonly/>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+    </div>
+</div>
+<!--
+@{
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.Nombre)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.NumeroEmpleado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.NumeroEmpleado)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.Direccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.Direccion)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.Telefono)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.Telefono)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.FechaNacimiento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.FechaNacimiento)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.FechaIngreso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.FechaIngreso)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.Puesto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.Puesto)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.HorasEstipuladas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.HorasEstipuladas)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados.PagoPorHora)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleados.PagoPorHora)
+        </dd>
+    </dl>
+}
+-->

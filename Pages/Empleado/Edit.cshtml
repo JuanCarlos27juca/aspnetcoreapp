@@ -1,0 +1,114 @@
+﻿@page
+@model aspnetcoreapp.Pages.Empleado.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@section Styles {
+<link href="@Url.Content("~/css/Empleado/Create.css")" rel="stylesheet" type="text/css" />
+}
+<h3>Editar empleado</h3>
+    <a id = "Cancelar_editar" class = "btn" asp-page="Index">Cancelar</a>
+<hr />
+<div class="tabla">
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Nombre" class="control-label"></label>
+                                <input asp-for="Empleados.Nombre" class="form-control" />
+                                <span asp-validation-for="Empleados.Nombre" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Contrasenia" class="control-label"></label>
+                                <input asp-for="Empleados.Contrasenia" class="form-control" />
+                                <span asp-validation-for="Empleados.Contrasenia" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td rowspan = "5">
+                            <img src = "/imagenes/Mesero_modificar.png"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.NumeroEmpleado" class="control-label"></label>
+                                <input type="number" asp-for="Empleados.NumeroEmpleado" class="form-control" />
+                                <span asp-validation-for="Empleados.NumeroEmpleado" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Puesto" class="control-label"></label>
+                                <input asp-for="Empleados.Puesto" class="form-control" />
+                                <span asp-validation-for="Empleados.Puesto" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.FechaNacimiento" class="control-label"></label>
+                                <input asp-for="Empleados.FechaNacimiento" class="form-control" />
+                                <span asp-validation-for="Empleados.FechaNacimiento" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.FechaIngreso" class="control-label"></label>
+                                <input asp-for="Empleados.FechaIngreso" class="form-control" />
+                                <span asp-validation-for="Empleados.FechaIngreso" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Telefono" class="control-label"></label>
+                                <input asp-for="Empleados.Telefono" class="form-control" />
+                                <span asp-validation-for="Empleados.Telefono" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.Direccion" class="control-label"></label>
+                                <input asp-for="Empleados.Direccion" class="form-control" />
+                                <span asp-validation-for="Empleados.Direccion" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.HorasEstipuladas" class="control-label"></label>
+                                <input asp-for="Empleados.HorasEstipuladas" class="form-control" />
+                                <span asp-validation-for="Empleados.HorasEstipuladas" class="text-danger"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label asp-for="Empleados.PagoPorHora" class="control-label"></label>
+                                <input asp-for="Empleados.PagoPorHora" class="form-control" />
+                                <span asp-validation-for="Empleados.PagoPorHora" class="text-danger"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                    <div class="form-group">
+                        <input type="submit" value="Guardar cambios" class="btn btn-primary" id = "Guardar_cambios" />
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

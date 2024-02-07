@@ -1,0 +1,168 @@
+﻿@page
+@model aspnetcoreapp.Pages.Ajuste.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Días laborales</h1>
+
+<!--
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+-->
+<div id="Lista_de_empleados" style = "min-height:260px;height:260px; overflow-y:hidden">
+    <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Ajustes[0].DomingoInicio)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Ajustes[0].LunesInicio)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Ajustes[0].MartesInicio)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Ajustes[0].MiercolesInicio)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Ajustes[0].JuevesInicio)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Ajustes[0].ViernesInicio)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Ajustes[0].SabadoInicio)
+                </td>
+            </tr>
+            <tr>
+                @foreach (var item in Model.Ajustes)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DomingoInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LunesInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MartesInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MiercolesInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JuevesInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ViernesInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SabadoInicio)
+                    </td>
+                }
+            <tr>
+                <td>
+                        @Html.DisplayNameFor(model => model.Ajustes[0].DomingoFinal)
+                </td>
+                <td>
+                        @Html.DisplayNameFor(model => model.Ajustes[0].LunesFinal)
+                </td>
+                <td>
+                        @Html.DisplayNameFor(model => model.Ajustes[0].MartesFinal)
+                </td>
+                <td>
+                        @Html.DisplayNameFor(model => model.Ajustes[0].MiercolesFinal)
+                </td>
+                <td>
+                        @Html.DisplayNameFor(model => model.Ajustes[0].JuevesFinal)
+                </td>
+                <td>
+                        @Html.DisplayNameFor(model => model.Ajustes[0].ViernesFinal)
+                </td>
+                <td>
+                        @Html.DisplayNameFor(model => model.Ajustes[0].SabadoFinal)
+                </td>
+            </tr>
+            <tr>
+                    @foreach (var item in Model.Ajustes)
+                    {
+                    <td>
+                            @Html.DisplayFor(modelItem => item.DomingoFinal)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.LunesFinal)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.MartesFinal)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.MiercolesFinal)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.JuevesFinal)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.ViernesFinal)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.SabadoFinal)
+                    </td>
+                    }
+            </tr>
+            <tr>
+                    @foreach (var item in Model.Ajustes)
+                    {
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Domingo)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Lunes)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Martes)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Miercoles)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Jueves)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Viernes)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Sabado)
+                    </td>
+                    }
+            </tr>
+            <tr>
+                    @foreach (var item in Model.Ajustes)
+                    {
+                    <td colspan="4">
+                        <p>
+                            Inicio semana laboral: @Html.DisplayFor(modelItem => item.ISL)
+                        </p>
+                    </td>
+                    <td colspan="3">
+                        <p>
+                            Termina semana laboral: @Html.DisplayFor(modelItem => item.FSL)
+                        </p>
+                    </td>
+                    }
+            </tr>
+            <tr>
+                    @foreach (var item in Model.Ajustes)
+                    {
+                    <td colspan="7">
+                        <a class = "SiLaboro BotonEditar" asp-page="./Edit" asp-route-id="@item.Id">Editar</a>
+                    </td>
+                    }
+            </tr>
+        </tbody>
+    </table>
+</div>

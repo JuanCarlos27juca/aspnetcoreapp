@@ -1,0 +1,159 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IndexModel
+@{
+    ViewData["Title"] = "Menú";
+}
+@{
+      /*
+      @section Scripts
+      {
+      <script src="@Url.Content("~/js/site2.js")"></script>
+    }*/
+}
+<body>
+    <h1 id="Titulo" class="text-center">Control de empleados</h1>
+    <div class="misflechas">
+        <div class="flecha flechas draggable" onclick="openForm2();leerhuella()">
+            <div class="texto">ENTRADA</div>
+        </div>
+        <div class="flecha2 flechas" onclick="openForm2();leerhuella()">
+            <div class="texto">SALIDA</div>
+        </div>
+        <div class="flecha3 flechas" onclick="openForm2();leerhuella()">
+            <div class="texto">COMIDA OUT</div>
+        </div>
+        <div class="flecha4 flechas" onclick="openForm2();leerhuella()">
+            <div class="texto">COMIDA IN</div>
+        </div>
+        <div class="flecha5 flechas" onclick="openForm2();leerhuella()">
+            <div class="texto">10 OUT</div>
+        </div>
+        <div class="flecha6 flechas" onclick="openForm2();leerhuella();escribir_dias()">
+            <div class="texto">10 IN</div>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <div class="widget">
+            <div id="relojes">
+                <div id="mireloj1">
+                </div>
+                <div id="mireloj1_1">
+                </div>
+                <div id="mireloj2">
+                    <div class="fecha">
+                        <p id="diaSemana" class="diaSemana"></p>
+                        <p id="dia" class="dia"></p>
+                        <p>de</p>
+                        <p id="mes" class="mes"></p>
+                        <p>del</p>
+                        <p id="anio" class="anio"></p>
+                    </div>
+                    <div class="reloj">
+                        <p id="horas" class="horas"></p>
+                        <p>:</p>
+                        <p id="minutos" class="minutos"></p>
+                        <p>:</p>
+                        <div class="cajaSegundos">
+                            <p id="ampm" class="ampm"></p>
+                            <p id="segundos" class="segundos"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="open-button" onclick="openForm()">AJUSTES</button>
+    <button class="open-button2" onclick="openForm3()">MIS MOVIMIENTOS</button>
+
+    <div class="form-popup" id="myForm">
+        <form method="post" class="form-container">
+            <h3>ADMIN</h3>
+
+            <label for="psw"><b>CLAVE</b></label>
+            <input id="pass" type="password" placeholder="ENTER" name="psw" required>
+
+            <button type="submit" class="btn" value="submit" asp-page-handler="submit">LOGIN</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+        </form>
+    </div>
+    <div class="form2-popup" id="myForm2">
+        <form action="/action_page.php" class="form2-container">
+            <b>Ingrese huella</b>
+            <p id="hour">Hora: </p>
+            <div class="imagen">
+                <img src="/imagenes/alitas.png" id="huellaDactilar">
+            </div>
+            <button type="button" class="btn cancel" onclick="closeForm2(); ocultarborde();">Close</button>
+        </form>
+    </div>
+    <div class="form3-popup" id="myForm3">
+        <form method="post" class="form3-container">
+            <h3>Empleado</h3>
+
+            <label for="psw"><b>CLAVE</b></label>
+            <input id="pass2" type="password" placeholder="ENTER" name="psw" required>
+
+            <button type="submit" class="btn" value="submit" asp-page-handler="submit">LOGIN</button>
+            <button type="button" class="btn cancel" onclick="closeForm3()">CLOSE</button>
+        </form>
+    </div>
+    <script>
+        var data = @Json.Serialize(@Model.vista_dmpe);
+        var data2 = @Json.Serialize(@Model.vista_dmpe_dds);
+    </script>
+    <div id="Movimientos_por_empleado">
+        <div id="Nombre_empleado">
+            Nombre empleado: <p>@Model.texto_pasado</p>
+        </div>
+        <table id = "MiTabla">
+            <thead>
+                <tr id="Descripcion">
+                    <th>
+                        Día
+                    </th>
+                    <th>
+                        Entrada
+                    </th>
+                    <th>
+                        Comida Out
+                    </th>
+                    <th>
+                        Comida In
+                    </th>
+                    <th>
+                        10 Out
+                    </th>
+                    <th>
+                        10 In
+                    </th>
+                    <th>
+                        Salida
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        Horas establecidas:
+                    </td>
+                    <td colspan="4">
+                        Horas trabajadas:
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="Cerrar_mpe">
+            Aceptar
+        </div>
+    </div>
+    <!--
+    <div class="contenedor2">
+        <div class="contenedor3">
+            <h2>Mi primer borde con animación</h2>
+        </div>
+    </div>
+    -->
+</body>

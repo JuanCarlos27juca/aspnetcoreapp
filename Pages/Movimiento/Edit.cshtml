@@ -1,0 +1,52 @@
+﻿@page
+@model aspnetcoreapp.Pages.Movimiento.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+@section Styles {
+<link href="@Url.Content("~/css/Movimiento/Index.css")" rel="stylesheet" type="text/css" />
+}
+<h1>Edit</h1>
+
+<h4>Movimientos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Movimientos.Id" />
+            <div class="form-group">
+                <label asp-for="Movimientos.Contrasenia" class="control-label"></label>
+                <input asp-for="Movimientos.Contrasenia" class="form-control" />
+                <span asp-validation-for="Movimientos.Contrasenia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movimientos.Movimiento" class="control-label"></label>
+                <input asp-for="Movimientos.Movimiento" class="form-control" />
+                <span asp-validation-for="Movimientos.Movimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movimientos.DiaHora" class="control-label"></label>
+                <input asp-for="Movimientos.DiaHora" class="form-control" />
+                <span asp-validation-for="Movimientos.DiaHora" class="text-danger"></span>
+            </div>
+            <div class="d-inline-block form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+            <div class="d-inline-block form-group">
+                <a class="btn btn-danger" asp-page="./Index">Cancelar</a>
+            </div>
+            <div class="d-inline-block form-group">
+                <a Class="btn btn-dark" asp-page="./Delete" asp-route-id="@Model.Movimientos.Id">Borrar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

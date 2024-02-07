@@ -1,0 +1,59 @@
+﻿@page
+@model aspnetcoreapp.Pages.Empleado.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Empleados</h3>
+
+<div class="tabla" id="Lista_de_empleados">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados[0].Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados[0].NumeroEmpleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados[0].Telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados[0].HorasEstipuladas)
+                </th>
+                <th colspan = "3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Empleados)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumeroEmpleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HorasEstipuladas)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Contrasenia"><img src = "/imagenes/Registro.png"/></a>
+                    </td>
+                    <td>
+                        <a asp-page="./Details" asp-route-id="@item.Contrasenia"><img src = "/imagenes/Informacion.png"></a>
+                    </td>
+                    <td>
+                        <a asp-page="./Delete" asp-route-id="@item.Contrasenia"><img src = "/imagenes/bote_basura.png" /></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<a id="Agregar_empleado" asp-page="Create">Agregar empleado</a>

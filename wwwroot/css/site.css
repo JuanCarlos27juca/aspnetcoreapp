@@ -1,0 +1,838 @@
+html {
+    font-size: 14px;
+    width: 1000px;
+    border: 5px solid black;
+    height: 638px;
+    /*Texto no seleccionable*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+
+    .oculto {
+        display: none;
+    }
+
+    body {
+        margin-bottom: 60px;
+    }
+
+    #Titulo {
+        color: #a72020;
+    }
+
+    .contenedor {
+        width: 90%;
+        height: 100%;
+        position: relative;
+        margin: auto;
+        background: #ccc;
+    }
+
+    .widget {
+        width: 40%;
+        height: 40%;
+        min-width: 400px;
+        position: absolute;
+        top: 45px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .fecha p {
+        display: inline-block;
+        line-height: 1em;
+    }
+
+    .reloj p {
+        display: inline-block;
+        line-height: 1em;
+        font-size: 4vw;
+    }
+
+    #mireloj1 {
+        background-color: rgba(0,0,0,0.1);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    #mireloj2 {
+        padding: 5px;
+        background-color: rgba(255,255,255,1);
+        border-radius: 5px;
+    }
+
+    .fecha {
+        font-family: arial;
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 5px;
+        background: rgba(0,0,0,.5);
+        padding: 20px;
+        width: 100%;
+        height: 100px;
+        border-radius: 5px;
+    }
+
+    .reloj {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        width: 100%;
+        height: 100px;
+        padding: 20px;
+        font-size: 4em;
+        text-align: center;
+        background: rgba(0,0,0,.5);
+        border-radius: 5px;
+    }
+
+        .reloj .cajaSegundos {
+            display: inline-block;
+        }
+
+        .reloj .ampm, .reloj .segundos {
+            display: block;
+            font-size: 2vw;
+        }
+
+    .flecha {
+        display: flex;
+        position: absolute;
+        top: 200px;
+        left: 3%;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 240px;
+        border: solid 2px #ccc;
+        border-right: none;
+        border-radius: 10px 0 0 10px;
+        background: #eee linear-gradient(red, #d80c0c, red);
+    }
+
+        .flecha:after {
+            position: absolute;
+            left: 95%;
+            width: 10%;
+            height: 60%;
+            border-left: solid 2px #ccc;
+            border-top: solid 2px #ccc;
+            transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+            background: red linear-gradient(45deg, red, #d80c0c, red);
+            content: '';
+        }
+
+    .flecha2 {
+        display: flex;
+        position: absolute;
+        top: 200px;
+        left: 73%;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 240px;
+        border: solid 2px #ccc;
+        border-left: none;
+        border-radius: 0 10px 10px 0;
+        background: #eee linear-gradient(red, #d80c0c, red);
+    }
+
+        .flecha2:after {
+            position: absolute;
+            left: -5.5%;
+            width: 24px;
+            height: 23px;
+            border-right: solid 2px #ccc;
+            border-bottom: solid 2px #ccc;
+            transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+            background: red linear-gradient(45deg, red, #d80c0c, red);
+            content: '';
+        }
+
+    .flecha3 {
+        display: flex;
+        position: absolute;
+        top: 270px;
+        left: 3%;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 240px;
+        border: solid 2px #ccc;
+        border-right: none;
+        border-radius: 10px 0 0 10px;
+        background: #eee linear-gradient(red, #d80c0c, red);
+    }
+
+        .flecha3:after {
+            position: absolute;
+            left: 95%;
+            width: 24px;
+            height: 23px;
+            border-left: solid 2px #ccc;
+            border-top: solid 2px #ccc;
+            transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+            background: red linear-gradient(45deg, red, #d80c0c, red);
+            content: '';
+        }
+
+    .flecha4 {
+        display: flex;
+        position: absolute;
+        top: 270px;
+        left: 73%;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 240px;
+        border: solid 2px #ccc;
+        border-left: none;
+        border-radius: 0 10px 10px 0;
+        background: #eee linear-gradient(red, #d80c0c, red);
+    }
+
+        .flecha4:after {
+            position: absolute;
+            left: -5.5%;
+            width: 24px;
+            height: 23px;
+            border-right: solid 2px #ccc;
+            border-bottom: solid 2px #ccc;
+            transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+            background: red linear-gradient(45deg, red, #d80c0c, red);
+            content: '';
+        }
+
+    .flecha5 {
+        display: flex;
+        position: absolute;
+        top: 340px;
+        left: 3%;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 240px;
+        border: solid 2px #ccc;
+        border-right: none;
+        border-radius: 10px 0 0 10px;
+        background: #eee linear-gradient(red, #d80c0c, red);
+    }
+
+        .flecha5:after {
+            position: absolute;
+            left: 95%;
+            width: 24px;
+            height: 23px;
+            border-left: solid 2px #ccc;
+            border-top: solid 2px #ccc;
+            transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+            background: red linear-gradient(45deg, red, #d80c0c, red);
+            content: '';
+        }
+
+    .flecha6 {
+        display: flex;
+        position: absolute;
+        top: 340px;
+        left: 73%;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 240px;
+        border: solid 2px #ccc;
+        border-left: none;
+        border-radius: 0 10px 10px 0;
+        background: #eee linear-gradient(red, #d80c0c, red);
+    }
+
+        .flecha6:after {
+            position: absolute;
+            left: -5.5%;
+            width: 24px;
+            height: 23px;
+            border-right: solid 2px #ccc;
+            border-bottom: solid 2px #ccc;
+            transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+            background: red linear-gradient(45deg, red, #d80c0c, red);
+            content: '';
+        }
+
+    .flechas:hover {
+        cursor: pointer;
+        color: white;
+    }
+
+    .flechas:active {
+        color: #a72020;
+    }
+
+    .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.8;
+        position: absolute;
+        bottom: 62px;
+        right: 28px;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+    }
+
+    .open-button2 {
+        background-color: #555;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.8;
+        position: absolute;
+        bottom: 62px;
+        left: 28px;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    /* The popup form - hidden by default */
+    .form-popup {
+        display: none;
+        position: absolute;
+        bottom: 40px;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    .form2-popup {
+        display: none;
+        position: fixed;
+        bottom: 60px;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+
+    .form3-popup {
+        display: none;
+        position: absolute;
+        bottom: 40px;
+        left: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    #myForm2 {
+        display: none;
+        position: absolute;
+        top: 27%;
+        width: 23%;
+        height: 40%;
+        left: 38.5%;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+    /* Add styles to the form container */
+    .form-container, .form3-container {
+        max-width: 120px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .form2-popup, .form3-popup {
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .form2-container {
+        max-width: 100%;
+        padding: 10px;
+        background-color: white;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text], .form-container input[type=password], .form3-container input[type=text], .form3-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    .form2-container input[type=text], .form2-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus, .form3-container input[type=text]:focus, .form3-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    .form2-container input[type=text]:focus, .form2-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    .form3-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    .form2-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.8;
+    }
+    /* Add a red background color to the cancel button */
+    .form-container .cancel, .form3-container .cancel {
+        background-color: red;
+    }
+
+    .form2-container .cancel {
+        background-color: red;
+        position: absolute;
+        margin-left: 5%;
+        width: 90%;
+        top: 85%;
+        left: 0;
+    }
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover, .form3-container .btn:hover, .open-button2:hover {
+        opacity: 1;
+    }
+
+    .form2-container .btn:hover {
+        opacity: 1;
+    }
+
+    .imagen {
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 25%;
+        left: 10%;
+        width: 80%;
+        height: 60%;
+        border-radius: 5px;
+    }
+
+    #huellaDactilar {
+        position: absolute;
+        left: 10%;
+        top: 5%;
+        width: 80%;
+        height: 80%;
+        border-radius: 5px;
+    }
+
+    .contenedor2 {
+        position: absolute;
+        background-color: #31b072;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        color: white;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: rgba(0,150,100, 0.6) 12px 12px 8px 2px;
+    }
+
+        .contenedor2:hover {
+            cursor: pointer;
+        }
+
+        .contenedor2:before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-image: conic-gradient(red 0deg, transparent 160deg);
+            animation: rotar 2s linear infinite;
+        }
+
+        .contenedor2:hover:before {
+            background-image: conic-gradient(blue 20deg, transparent 120deg);
+        }
+
+    .contenedor3 {
+        position: absolute;
+        background-color: #04AA6D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 185px;
+        height: 185px;
+        color: white;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    h2 {
+        text-shadow: 5px 5px 15px white;
+        padding: 3px;
+        text-align: center;
+    }
+
+        h2:hover {
+            text-shadow: 2px 2px 5px white;
+            transform: translate(-2px,-2px);
+        }
+
+    @keyframes rotar {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+    @keyframes leer {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+    @keyframes leer2 {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    #mireloj1 {
+        position: absolute;
+        display: none;
+        width: 420px;
+        height: 236px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        left: -10px;
+        top: -10px;
+    }
+
+    #mireloj1_1 {
+        position: absolute;
+        display: flex;
+        width: 420px;
+        height: 236px;
+        align-items: center;
+        justify-content: center;
+        left: -10px;
+        top: -10px;
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+
+    #mireloj1:before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background-image: conic-gradient(var(--boxAfterBackColor,red) 0deg, transparent 360deg);
+        animation: leer 2s linear infinite;
+        z-index: -1;
+    }
+
+    #relojes {
+        max-width: 420px;
+        max-height: 300px;
+        overflow: hidden;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+#frame_administrador {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(72,72,125,0.8);
+    overflow-y: scroll;
+}
+
+#titulo_FA {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 39%;
+    color: yellow;
+    text-shadow: 2px 2px 10px black;
+}
+
+.movimiento_FA_1 {
+    display: block;
+    width: 80%;
+    height: 150px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+
+.movimiento_FA_n {
+    display: block;
+    width: 80%;
+    height: 150px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+
+.table td, th {
+    text-align: center;
+}
+
+.tabla {
+    height: 450px;
+}
+
+#Lista_de_empleados {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: auto;
+    max-height: 450px;
+    width: 960px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#Movimientos_por_empleado {
+    display: block;
+    position: absolute;
+    top: 65%;
+    left: 25%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
+}
+
+#Movimientos_empleados_hoy, #Horas_empleado_semana_actual {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: auto;
+}
+
+    #Movimientos_por_empleado table, #Lista_de_empleados table, #Movimientos_empleados_hoy table, #Horas_empleado_semana_actual {
+        width: 100%;
+    }
+
+    #Movimientos_por_empleado table tr:last-child td:first-child {
+        background-color: lightgray;
+        border-bottom: 2px solid #ccc;
+    }
+
+    #Movimientos_por_empleado table tr:last-child td:last-child {
+        background-color: lightgreen;
+        border-bottom: 2px solid #ccc;
+    }
+
+        #Movimientos_por_empleado table th, #Lista_de_empleados table th, #Movimientos_empleados_hoy table th, #Horas_empleado_semana_actual table th {
+            border-left: 2px solid #ccc;
+        }
+
+        #Movimientos_por_empleado tr, #Lista_de_empleados tr, #Movimientos_empleados_hoy tr, #Horas_empleado_semana_actual tr {
+            text-align: center;
+            width: 100%;
+        }
+
+        #Movimientos_por_empleado tr:nth-child(odd), #Lista_de_empleados tr:nth-child(odd), #Movimientos_empleados_hoy tr:nth-child(odd) {
+            background-color: lightblue;
+        }
+
+            #Horas_empleado_semana_actual tr:nth-child(odd) {
+                background-color: lightgreen;
+            }
+
+            #Movimientos_por_empleado tr td, #Lista_de_empleados tr td, #Movimientos_empleados_hoy tr td, #Horas_empleado_semana_actual tr td {
+                border-left: 2px solid #ccc;
+                font-size: 12px;
+            }
+
+                #Movimientos_por_empleado tr td:first-child, #Lista_de_empleados tr td:first-child, #Movimientos_empleados_hoy tr td:first-child, #Horas_empleado_semana_actual tr td:first-child {
+                    border-left: none;
+                }
+
+.table thead {
+    border-bottom: 2px solid #ccc;
+}
+
+    .table thead th {
+        background-color: lightgray;
+    }
+
+.table td img {
+    width: 16px;
+    height: 16px;
+}
+
+#Agregar_empleado, #Agregar_movimiento {
+    background-color: lightgreen;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 410px;
+    padding-right: 410px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 5px;
+}
+
+#Lista_de_empleados th:first-child {
+    border-radius: 10px 0 0 0;
+    border-left: none;
+}
+
+#Lista_de_empleados th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+#Nombre_empleado, #Fecha_movimientos_hoy, #Fecha_semana_movimientos {
+    width: 100%;
+    background-color: lightgray;
+    border-bottom: 2px solid #ccc;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+    #Nombre_empleado p, #Fecha_movimientos_hoy p, #Fecha_semana_movimientos p {
+        display: inline-block;
+        font-weight: normal;
+        font-size: 14px;
+        height: 8px;
+        color: green;
+    }
+
+#Cerrar_mpe {
+    width: 100%;
+    background-color: lightgray;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+    #Cerrar_mpe:hover {
+        background-color: rgba(155,155,155);
+    }
+
+    #Cerrar_mpe:active {
+        background-color: rgba(175,175,175);
+    }
+/*
+        #Descripcion{
+        background-color: pink;
+    }*/
+
+#Descripcion th {
+    text-align: center;
+    width: 14.28571%;
+    font-size: 12px;
+}
+
+#Descripcion2 th {
+    text-align: center;
+    width: 12.5%;
+    font-size: 12px;
+}
+
+#Descripcion3 th {
+    text-align: center;
+    width: 12.5%;
+    font-size: 12px;
+}
+
+#Descripcion th, #Descripcion2 th {
+    background-color: pink;
+}
+
+#Descripcion3 th{
+    background-color: pink;
+}
+
+#Descripcion th:first-child, #Descripcion2 th:first-child, #Descripcion3 th:first-child {
+    border-left: none;
+}
+    .SiLaboro{
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+        border: none;
+        background-color: none;
+    }
+    .NoLaboro{
+        background-color: lightpink;
+    }
+    .BotonEditar{
+        padding: 50%;
+    }
