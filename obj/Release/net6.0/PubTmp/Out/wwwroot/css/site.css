@@ -9,7 +9,10 @@ html {
     -ms-user-select: none;
     user-select: none;
 }
-
+.contenedorHTML {
+    height: 638px;
+    overflow-y: scroll;
+}
 @media (min-width: 600px) {
     html {
         font-size: 16px;
@@ -660,6 +663,7 @@ html {
     max-height: 450px;
     width: 960px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #Movimientos_por_empleado {
@@ -673,15 +677,15 @@ html {
     height: auto;
 }
 
-#Movimientos_empleados_hoy {
+#Movimientos_empleados_hoy, #Horas_empleado_semana_actual {
     border: 2px solid #ccc;
     border-radius: 10px;
     height: auto;
 }
 
-#Movimientos_por_empleado table, #Lista_de_empleados table, #Movimientos_empleados_hoy table {
-    width: 100%;
-}
+    #Movimientos_por_empleado table, #Lista_de_empleados table, #Movimientos_empleados_hoy table, #Horas_empleado_semana_actual {
+        width: 100%;
+    }
 
     #Movimientos_por_empleado table tr:last-child td:first-child {
         background-color: lightgray;
@@ -693,27 +697,31 @@ html {
         border-bottom: 2px solid #ccc;
     }
 
-    #Movimientos_por_empleado table th, #Lista_de_empleados table th, #Movimientos_empleados_hoy table th {
-        border-left: 2px solid #ccc;
-    }
+        #Movimientos_por_empleado table th, #Lista_de_empleados table th, #Movimientos_empleados_hoy table th, #Horas_empleado_semana_actual table th {
+            border-left: 2px solid #ccc;
+        }
 
-    #Movimientos_por_empleado tr, #Lista_de_empleados tr, #Movimientos_empleados_hoy tr {
-        text-align: center;
-        width: 100%;
-    }
+        #Movimientos_por_empleado tr, #Lista_de_empleados tr, #Movimientos_empleados_hoy tr, #Horas_empleado_semana_actual tr {
+            text-align: center;
+            width: 100%;
+        }
 
         #Movimientos_por_empleado tr:nth-child(odd), #Lista_de_empleados tr:nth-child(odd), #Movimientos_empleados_hoy tr:nth-child(odd) {
             background-color: lightblue;
         }
 
-        #Movimientos_por_empleado tr td, #Lista_de_empleados tr td, #Movimientos_empleados_hoy tr td {
-            border-left: 2px solid #ccc;
-            font-size: 12px;
-        }
-
-            #Movimientos_por_empleado tr td:first-child, #Lista_de_empleados tr td:first-child, #Movimientos_empleados_hoy tr td:first-child {
-                border-left: none;
+            #Horas_empleado_semana_actual tr:nth-child(odd) {
+                background-color: lightgreen;
             }
+
+            #Movimientos_por_empleado tr td, #Lista_de_empleados tr td, #Movimientos_empleados_hoy tr td, #Horas_empleado_semana_actual tr td {
+                border-left: 2px solid #ccc;
+                font-size: 12px;
+            }
+
+                #Movimientos_por_empleado tr td:first-child, #Lista_de_empleados tr td:first-child, #Movimientos_empleados_hoy tr td:first-child, #Horas_empleado_semana_actual tr td:first-child {
+                    border-left: none;
+                }
 
 .table thead {
     border-bottom: 2px solid #ccc;
@@ -750,7 +758,7 @@ html {
     border-radius: 0 10px 0 0;
 }
 
-#Nombre_empleado, #Fecha_movimientos_hoy {
+#Nombre_empleado, #Fecha_movimientos_hoy, #Fecha_semana_movimientos {
     width: 100%;
     background-color: lightgray;
     border-bottom: 2px solid #ccc;
@@ -760,7 +768,7 @@ html {
     font-weight: bold;
 }
 
-    #Nombre_empleado p, #Fecha_movimientos_hoy p {
+    #Nombre_empleado p, #Fecha_movimientos_hoy p, #Fecha_semana_movimientos p {
         display: inline-block;
         font-weight: normal;
         font-size: 14px;
@@ -801,14 +809,37 @@ html {
     font-size: 12px;
 }
 
+#Descripcion3 th {
+    text-align: center;
+    width: 10%;
+    font-size: 12px;
+}
+
 #Descripcion th, #Descripcion2 th {
     background-color: pink;
 }
 
-    #Descripcion th:first-child, #Descripcion2 th:first-child {
-        border-left: none;
-    }
+#Descripcion3 th{
+    background-color: pink;
+}
 
+#Descripcion th:first-child, #Descripcion2 th:first-child, #Descripcion3 th:first-child {
+    border-left: none;
+}
+    .SiLaboro{
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+        border: none;
+        background-color: none;
+    }
     .NoLaboro{
         background-color: lightpink;
+    }
+    .BotonEditar{
+        padding: 50%;
+    }
+    .separador{
+        width: 100%;
+        height: 20px;
     }

@@ -1,0 +1,83 @@
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Juan Carlos\source\repos\asignacionmesas\aspnetcoreapp\Release2\
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No store type was specified for the decimal property 'PagoPorHora' on entity type 'Empleados'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (974ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Contrasenia], [e].[Direccion], [e].[FechaIngreso], [e].[FechaNacimiento], [e].[HorasEstipuladas], [e].[Nombre], [e].[NumeroEmpleado], [e].[PagoPorHora], [e].[Puesto], [e].[Telefono]
+      FROM [Empleados] AS [e]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (109ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[Contrasenia], [m].[DiaHora], [m].[Movimiento]
+      FROM [Movimientos] AS [m]
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[Contrasenia], [m].[DiaHora], [m].[Movimiento]
+      FROM [Movimientos] AS [m]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Contrasenia], [e].[Direccion], [e].[FechaIngreso], [e].[FechaNacimiento], [e].[HorasEstipuladas], [e].[Nombre], [e].[NumeroEmpleado], [e].[PagoPorHora], [e].[Puesto], [e].[Telefono]
+      FROM [Empleados] AS [e]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (102ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[Id], [a].[Domingo], [a].[DomingoFinal], [a].[DomingoInicio], [a].[FSL], [a].[ISL], [a].[Jueves], [a].[JuevesFinal], [a].[JuevesInicio], [a].[Lunes], [a].[LunesFinal], [a].[LunesInicio], [a].[Martes], [a].[MartesFinal], [a].[MartesInicio], [a].[Miercoles], [a].[MiercolesFinal], [a].[MiercolesInicio], [a].[Sabado], [a].[SabadoFinal], [a].[SabadoInicio], [a].[Viernes], [a].[ViernesFinal], [a].[ViernesInicio]
+      FROM [Ajustes] AS [a]
+Thursday
+22/02/2024
+Thursday
+22/02/2024
+Thursday
+22/02/2024
+Thursday
+22/02/2024
+Thursday
+22/02/2024
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[Id], [a].[Domingo], [a].[DomingoFinal], [a].[DomingoInicio], [a].[FSL], [a].[ISL], [a].[Jueves], [a].[JuevesFinal], [a].[JuevesInicio], [a].[Lunes], [a].[LunesFinal], [a].[LunesInicio], [a].[Martes], [a].[MartesFinal], [a].[MartesInicio], [a].[Miercoles], [a].[MiercolesFinal], [a].[MiercolesInicio], [a].[Sabado], [a].[SabadoFinal], [a].[SabadoInicio], [a].[Viernes], [a].[ViernesFinal], [a].[ViernesInicio]
+      FROM [Ajustes] AS [a]
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (209ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[Domingo], [a].[DomingoFinal], [a].[DomingoInicio], [a].[FSL], [a].[ISL], [a].[Jueves], [a].[JuevesFinal], [a].[JuevesInicio], [a].[Lunes], [a].[LunesFinal], [a].[LunesInicio], [a].[Martes], [a].[MartesFinal], [a].[MartesInicio], [a].[Miercoles], [a].[MiercolesFinal], [a].[MiercolesInicio], [a].[Sabado], [a].[SabadoFinal], [a].[SabadoInicio], [a].[Viernes], [a].[ViernesFinal], [a].[ViernesInicio]
+      FROM [Ajustes] AS [a]
+      WHERE [a].[Id] = @__id_0
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[Contrasenia], [m].[DiaHora], [m].[Movimiento]
+      FROM [Movimientos] AS [m]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [e].[Contrasenia], [e].[Direccion], [e].[FechaIngreso], [e].[FechaNacimiento], [e].[HorasEstipuladas], [e].[Nombre], [e].[NumeroEmpleado], [e].[PagoPorHora], [e].[Puesto], [e].[Telefono]
+      FROM [Empleados] AS [e]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[Id], [a].[Domingo], [a].[DomingoFinal], [a].[DomingoInicio], [a].[FSL], [a].[ISL], [a].[Jueves], [a].[JuevesFinal], [a].[JuevesInicio], [a].[Lunes], [a].[LunesFinal], [a].[LunesInicio], [a].[Martes], [a].[MartesFinal], [a].[MartesInicio], [a].[Miercoles], [a].[MiercolesFinal], [a].[MiercolesInicio], [a].[Sabado], [a].[SabadoFinal], [a].[SabadoInicio], [a].[Viernes], [a].[ViernesFinal], [a].[ViernesInicio]
+      FROM [Ajustes] AS [a]
+Thursday
+22/02/2024
+Thursday
+22/02/2024
+Thursday
+22/02/2024
+Thursday
+22/02/2024
+Thursday
+22/02/2024
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

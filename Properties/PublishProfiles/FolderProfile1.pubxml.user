@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Juan Carlos\source\repos\asignacionmesas\aspnetcoreapp\Release2</_PublishTargetUrl>
+    <History>True|2024-02-26T05:44:55.7219587Z;True|2024-02-21T09:17:18.6675323-08:00;False|2024-02-20T16:08:30.8558513-08:00;False|2024-02-20T16:07:40.3355825-08:00;False|2024-02-20T16:02:36.4265319-08:00;False|2024-02-19T20:38:34.9551585-08:00;False|2024-02-19T20:36:04.2414465-08:00;False|2024-02-19T20:33:09.4715750-08:00;False|2024-02-19T20:30:01.0772031-08:00;True|2024-02-19T20:13:09.0868850-08:00;True|2024-02-19T19:46:53.1945088-08:00;True|2024-02-19T19:35:00.3241520-08:00;True|2024-02-19T17:07:26.8600894-08:00;True|2024-02-19T17:04:13.5269304-08:00;True|2024-02-19T16:36:40.1865388-08:00;True|2024-02-19T16:19:56.1093550-08:00;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+</Project>

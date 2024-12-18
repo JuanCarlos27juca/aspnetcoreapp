@@ -102,6 +102,35 @@ namespace aspnetcoreapp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ajustes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Domingo = false,
+                            DomingoFinal = new DateTime(2024, 2, 7, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            DomingoInicio = new DateTime(2024, 2, 7, 7, 0, 0, 0, DateTimeKind.Unspecified),
+                            FSL = 5,
+                            ISL = 1,
+                            Jueves = true,
+                            JuevesFinal = new DateTime(2024, 2, 7, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            JuevesInicio = new DateTime(2024, 2, 7, 7, 0, 0, 0, DateTimeKind.Unspecified),
+                            Lunes = true,
+                            LunesFinal = new DateTime(2024, 2, 7, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            LunesInicio = new DateTime(2024, 2, 7, 7, 0, 0, 0, DateTimeKind.Unspecified),
+                            Martes = true,
+                            MartesFinal = new DateTime(2024, 2, 7, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            MartesInicio = new DateTime(2024, 2, 7, 7, 0, 0, 0, DateTimeKind.Unspecified),
+                            Miercoles = true,
+                            MiercolesFinal = new DateTime(2024, 2, 7, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            MiercolesInicio = new DateTime(2024, 2, 7, 7, 0, 0, 0, DateTimeKind.Unspecified),
+                            Sabado = false,
+                            SabadoFinal = new DateTime(2024, 2, 7, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            SabadoInicio = new DateTime(2024, 2, 7, 7, 0, 0, 0, DateTimeKind.Unspecified),
+                            Viernes = true,
+                            ViernesFinal = new DateTime(2024, 2, 7, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            ViernesInicio = new DateTime(2024, 2, 7, 7, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("aspnetcoreapp.Entidades.Empleados", b =>

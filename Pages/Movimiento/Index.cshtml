@@ -5,7 +5,7 @@
     ViewData["Title"] = "Movimientos";
 }
 @section Styles {
-<link href="@Url.Content("~/css/Movimiento/Index.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/Movimiento/Index.css")" rel="stylesheet" type="text/css" />
 }
 <!-- En este archivo "Index.CSHTML", de la pestaña "Movimientos",
     lo que se hace es:
@@ -18,6 +18,7 @@
     de cuándo empieza la jornada laboral y cuándo finaliza.
 -->
 <!-- ********************************* Aquí se abarca el punto 1) **********************-->
+<div class = "contenedorHTML">
 <h3>Movimientos</h3>
 <div id="Movimientos_empleados_hoy">
     <div id="Fecha_movimientos_hoy">
@@ -168,6 +169,7 @@
     </div>
 </div>
 <!-- *************************** Hasta aquí llega el punto 1) ***********************-->
+<div class = "separador"></div>
 <!-- *************************** Aquí comienza el punto 2) **************************-->
 <div id="Horas_empleado_semana_actual">
     <div id="Fecha_semana_movimientos">
@@ -199,6 +201,12 @@
                     Lunes
                 </th>
                 <th>
+                    Martes
+                </th>
+                <th>
+                    Miércoles
+                </th>
+                <th>
                     Hrs. Estipuladas
                 </th>
                 <th>
@@ -207,6 +215,8 @@
             </tr>
         </thead>
         <tbody>
+            @{
+            }
             @foreach (var nombre in Model.Empleados)
             {
                 // Aquí insertamos la primera celda: El nombre
@@ -214,15 +224,134 @@
                     <td>
                         @Html.DisplayFor(model => nombre.Nombre)
                     </td>
-                </tr>
-                /* Aquí debemos recorrer cada día de la semana laboral
-                y, en cada día recorrido, recorrer los movimientos desde
-                Entrada a Salida.
-                */
-                @foreach (var Horario in Model.Ajustes.Where(x => x.Id == 1))
-                {
+                    <!--/* Aquí debemos recorrer cada día de la semana laboral
+                    y, en cada día recorrido, recorrer los movimientos desde
+                    Entrada a Salida.
+                    */
+                        -->
+                    @{
+                        string jornada_empezo = "";
+                        DateTime dia_de_hoy = DateTime.Now;
+                        int hoy = 0;
+                        DateTime diaSemanaEmpieza = DateTime.Now;
+                        string semanaEmpieza = "";
+                        DateTime resultado = new DateTime();
+                        TimeSpan horasTrabajadasPorDia = new TimeSpan();
+                        TimeSpan totalHorasTrabajadasTS = new TimeSpan();
+                        double totalHorasTrabajadas = 0;
+                        string totalHorasTrabajadasS = "0.00";
+                        foreach (var dato in Model.Ajustes)
+                        {
+                            jornada_empezo = dato.ISL.ToString();
+                            switch (jornada_empezo)
+                            {
+                                case "Domingo":
+                                    jornada_empezo = "Sunday";
+                                    break;
+                                case "Lunes":
+                                    jornada_empezo = "Monday";
+                                    break;
+                                case "Martes":
+                                    jornada_empezo = "Tuesday";
+                                    break;
+                                case "Miercoles":
+                                    jornada_empezo = "Wednesday";
+                                    break;
+                                case "Jueves":
+                                    jornada_empezo = "Thursday";
+                                    break;
+                                case "Viernes":
+                                    jornada_empezo = "Friday";
+                                    break;
+                                case "Sabado":
+                                    jornada_empezo = "Saturday";
+                                    break;
+                            }
+                            Console.WriteLine(jornada_empezo);
+                        }
+                        for (int cuentaDias = 1; diaSemanaEmpieza.DayOfWeek.ToString() != jornada_empezo.ToString(); cuentaDias++)
+                        {
+                            diaSemanaEmpieza = DateTime.Now.AddDays(-cuentaDias);
+                            semanaEmpieza = diaSemanaEmpieza.ToString("dd/MM/yyyy");
+                            DateTime.TryParse(semanaEmpieza, out resultado);
+                            Console.WriteLine(semanaEmpieza);
+                            hoy = cuentaDias;
+                        }
+                        //Aquí vamos a rellenar las celdas con información de las horas trabajadas por día.
+                        for (int diasLaborados = 1; diasLaborados <= 7/*hoy + 1*/; diasLaborados++)
+                        {
+                            int cuenta2 = 0;
+                            string nulo = "-";
+                            DateTime hr_entrada = new DateTime();
+                            DateTime hr_salida = new DateTime();
+                            TimeSpan hrs_trabajadas = new TimeSpan();
+                            bool existeEntrada = false;
+                            bool existeSalida = false;
+                            int celdas_ocupadas = 0;
+                            int celdas_totales = 0;
+                            bool trabajoEsteDia = false;
+                            @foreach (var movimiento in Model.Movimientos.Where(x => x.Contrasenia == nombre.Contrasenia && x.DiaHora.Date == resultado.Date).OrderBy(x => x.DiaHora))
+                            {
+                                string hora_minuto = movimiento.DiaHora.ToString("hh:mm tt");
+                                /* El arreglo siguiente deberá poderse modificar en la pestaña de
+                                ajustes, donde se podrán agregar o quitar descansos, tiempos de
+                                descanso y tolerancias en los tiempos de descanso.
+                                */
+                                string[] mov = new string[] { "Entrada", "Comida Out", "Comida In", "10 Out", "10 In", "Salida" };
+                                celdas_totales = mov.Count();
+                                for (int cuenta = cuenta2; cuenta < mov.Length; cuenta++)
+                                {
+                                    if (movimiento.Movimiento == mov[cuenta])
+                                    {
+                                        celdas_ocupadas++;
+                                        string t_hrs_trabajadas = "";
+                                        if (movimiento.Movimiento == "Entrada")
+                                        {
+                                            hr_entrada = movimiento.DiaHora;
+                                            existeEntrada = true;
+                                        }
 
-                }
+                                        if (movimiento.Movimiento == "Salida" && existeEntrada == true)
+                                        {
+                                            existeSalida = true;
+                                            hr_salida = movimiento.DiaHora;
+                                            hrs_trabajadas = hr_salida - hr_entrada;
+                                            t_hrs_trabajadas = hrs_trabajadas.ToString(@"hh\:mm");
+                                            trabajoEsteDia = true;
+                                            TimeSpan.TryParse(t_hrs_trabajadas, out horasTrabajadasPorDia);
+                                            totalHorasTrabajadasTS = totalHorasTrabajadasTS + horasTrabajadasPorDia;
+                                            totalHorasTrabajadas = totalHorasTrabajadasTS.TotalHours;
+                                            totalHorasTrabajadasS = String.Format("{0:0.##}", totalHorasTrabajadas);
+
+                                            <td>
+                                                @Html.DisplayFor(model2 => t_hrs_trabajadas)
+                                            </td>
+                                        }
+                                        cuenta2 = cuenta + 1;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        celdas_ocupadas++;
+                                    }
+                                }
+                            }
+                            if (trabajoEsteDia == false)
+                            {
+                                <td class="NoLaboro">
+                                    @Html.DisplayFor(model2 => nulo)
+                                </td>
+                            }
+                            resultado = resultado.AddDays(1);
+                        }
+                    }
+                    <td>
+                        @Html.DisplayFor(model2 => nombre.HorasEstipuladas)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model2 => totalHorasTrabajadasS)
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
@@ -231,6 +360,7 @@
     </div>
 </div>
 <!-- ******************************* Hasta aquí llega el punto 2) ********************-->
+<div class = "separador"></div>
 <!-- *************** El siguiente código es para agilizar las pruebas ****************
     Aún no decido qué hacer con este fragmento de código. ¿Lo dejo? ¿Lo quito? Veremos
     qué tan útil me resulta ya que avance más en la aplicación.
@@ -289,11 +419,13 @@
                         <!--
                         <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a>
                         -->
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Borrar</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Borrar</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+    </div>
 </div>
+<div class = "separador"></div>
 <a id="Agregar_movimiento" asp-page="Create">Agregar movimiento</a>

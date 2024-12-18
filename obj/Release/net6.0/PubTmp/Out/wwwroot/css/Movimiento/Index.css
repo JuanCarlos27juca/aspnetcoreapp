@@ -17,11 +17,15 @@ th, h1{
     color: brown;
 }
 
-table a, p a {
+.Borrar{
+    background-color: mediumpurple;
+    color: white;
+}
+/*table a, p a {
     text-decoration: none;
     background-color: deepskyblue;
     color: black;
     border: 1px solid black;
     border-radius: 10px;
     padding: 2px 5px 2px 5px;
-}
+}*/
