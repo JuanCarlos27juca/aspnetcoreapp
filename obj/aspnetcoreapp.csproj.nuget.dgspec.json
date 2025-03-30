@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Juan Carlos\\source\\repos\\asignacionmesas\\aspnetcoreapp\\aspnetcoreapp.csproj": {}
+    "C:\\aspnetcoreapp\\aspnetcoreapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Juan Carlos\\source\\repos\\asignacionmesas\\aspnetcoreapp\\aspnetcoreapp.csproj": {
+    "C:\\aspnetcoreapp\\aspnetcoreapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Juan Carlos\\source\\repos\\asignacionmesas\\aspnetcoreapp\\aspnetcoreapp.csproj",
+        "projectUniqueName": "C:\\aspnetcoreapp\\aspnetcoreapp.csproj",
         "projectName": "aspnetcoreapp",
-        "projectPath": "C:\\Users\\Juan Carlos\\source\\repos\\asignacionmesas\\aspnetcoreapp\\aspnetcoreapp.csproj",
-        "packagesPath": "C:\\Users\\Juan Carlos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Juan Carlos\\source\\repos\\asignacionmesas\\aspnetcoreapp\\obj\\",
+        "projectPath": "C:\\aspnetcoreapp\\aspnetcoreapp.csproj",
+        "packagesPath": "C:\\Users\\stephanie\\.nuget\\packages\\",
+        "outputPath": "C:\\aspnetcoreapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Juan Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stephanie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -88,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
